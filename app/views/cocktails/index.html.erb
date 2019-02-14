@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="text-center">List of cocktails</h1>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b');">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <a class="card-link" href=<%= cocktail_path(cocktail) %> ></a>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+  <a class="btn btn-primary" href=<%= new_cocktail_path %> role="button" aria-pressed="true" > Add Cocktail 🍸</a>
+</div>
